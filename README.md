@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Xanta - Your Secret Santa Organizer
 
-## Getting Started
+Xanta is a simple web application that helps you organize Secret Santa gift exchanges effortlessly.  It randomly assigns participants and sends email notifications to each person, letting them know who they're buying a gift for.  No more manual drawings or complicated spreadsheets!
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* **Easy participant entry:**  Input names and email addresses directly into the web form.
+* **Random assignment:** Xanta automatically shuffles and assigns Santas, ensuring a fair and secret process.
+* **Email notifications:** Each participant receives an email revealing their assigned recipient.
+* **Privacy-focused:**  No data is stored.  Participant information is used solely for the purpose of the Secret Santa assignment and email delivery.
+* **Simple and intuitive UI:**  Get started quickly with the easy-to-use interface.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How to Use
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Add participants:** Enter the name and email address of each person participating in the Secret Santa.  A minimum of three participants are required.
+2. **Submit:** Click the "Submit the form" button. Xanta will randomly assign recipients and send emails to each participant.
+3. **Check your email:** Participants will receive an email informing them who they are buying a gift for.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Development
 
-## Learn More
+This project is built with Next.js and uses Nodemailer for sending emails.
 
-To learn more about Next.js, take a look at the following resources:
+**Prerequisites:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* Node.js and npm (or yarn)
+* An email provider account (e.g., Mail.ru, Gmail) and its SMTP settings for Nodemailer configuration.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Setup:**
 
-## Deploy on Vercel
+1. Clone the repository: `git clone https://github.com/ptrglbvc/xanta.git`
+2. Install dependencies: `npm install` or `yarn install`
+3. Create a `.env.local` file in the root directory and configure the following environment variables:
+   ```
+   EMAIL=your_email@provider.com
+   EMAIL_PASSWORD=your_email_password
+   ```
+4. Start the development server: `npm run dev` or `yarn dev`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Deployment:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project can be easily deployed on platforms like Vercel, Netlify, or other Next.js compatible hosting services.  Consult their respective documentation for specific instructions.
+
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request if you have any suggestions or improvements.
+
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
