@@ -137,7 +137,7 @@ export async function POST(request: NextRequest) {
           from: process.env.EMAIL,
           to: giver.email,
           subject: "You have been picked as a Secret Santa",
-          text: message,
+          html: message,
         };
 
         return sendEmailWithRetry(transporter, mailOptions);
