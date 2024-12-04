@@ -66,6 +66,10 @@ main > h1 {
     max-height: 76svh;
 }
 
+main {
+    padding: 30px;
+}
+
 button {
     padding: 10px 15px;
     background-color: var(--foreground);
