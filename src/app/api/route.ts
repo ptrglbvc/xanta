@@ -100,7 +100,38 @@ export async function POST(request: NextRequest) {
     const emailPromises = participants.map(
       (giver: { email: string }, i: number) => {
         const receiver = shuffledParticipants[i];
-        const message = `The human lucky enough to be graced by your present is ${receiver.name} (${receiver.email}).`;
+        const message = `<div style="font-family: 'Arial', sans-serif; color: #2c3e50; background-color: #f7f7f7; padding: 20px; border-radius: 10px; background-color: #8b0000">
+            <div style="text-align: center;">
+              <h1 style="color: #e74c3c; font-size: 36px; margin-bottom: 10px;">
+                🎅 Secret Santa 🎁
+              </h1>
+              <p style="font-size: 18px; color: #bbbbbb; margin-bottom: 20px;">
+                It's the most wonderful time of the year!
+              </p>
+            </div>
+            <div style="background-color: #ffffff; padding: 15px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+              <p style="font-size: 16px; color: #2c3e50; line-height: 1.6;">
+                Ho ho ho! 🎄 The lucky human who will be graced by your thoughtful gift this year is:
+              </p>
+              <h2 style="color: #e74c3c; font-size: 24px; text-align: center; margin: 20px 0;">
+                ${receiver.name}
+              </h2>
+              <p style="font-size: 16px; color: #2c3e50; text-align: center;">
+                ${receiver.email}
+              </p>
+              <p style="font-size: 16px; color: #2c3e50; line-height: 1.6; margin-top: 20px;">
+                Remember, the magic of Secret Santa is in the surprise! Keep your identity a secret and make their Christmas extra special. 🎁✨
+              </p>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+              <p style="font-size: 14px; color: #7f8c8d;">
+                Merry Christmas and Happy Holidays! 🎄❤️
+              </p>
+              <p style="font-size: 14px; color: #7f8c8d;">
+                Sent with love from the Secret Santa Generator 🎅
+              </p>
+            </div>
+          </div>`;
 
         const mailOptions = {
           from: process.env.EMAIL,
