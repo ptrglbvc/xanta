@@ -106,7 +106,7 @@ export default function SantaList() {
         Add Another Person
       </button>
       <button type="button" onClick={handleSecretSanta}>
-        Submit the form
+        Submit
       </button>
     </div>
   );

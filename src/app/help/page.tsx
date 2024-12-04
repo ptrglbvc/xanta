@@ -10,8 +10,12 @@ const HelpPage = () => {
       <ol>
         <li>Add participants: Name & email.</li>
         <li>
-          Send Emails: Click to send emails to each participant with their
-          assigned person.
+          Send Emails: Click &quot;Submit&quot; to send emails to each
+          participant with their assigned person.
+        </li>
+        <li>
+          The emails sometimes end up in the spam folder, so everyone should
+          check there if there are no emails in the main inbox.
         </li>
       </ol>
       <p>

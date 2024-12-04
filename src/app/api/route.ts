@@ -35,6 +35,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const uniqueEmails = new Set();
     // Validate each participant
     for (const participant of participants) {
       if (!participant?.name || !participant?.email) {
@@ -43,7 +44,14 @@ export async function POST(request: NextRequest) {
           { status: 400 },
         );
       }
-      participant.isPicked = false;
+      uniqueEmails.add(participant.email);
+    }
+
+    if (!(participants.length === uniqueEmails.size)) {
+      return NextResponse.json(
+        { error: "Not all emails are unique" },
+        { status: 400 },
+      );
     }
 
     function isValidShuffle(
@@ -51,11 +59,10 @@ export async function POST(request: NextRequest) {
       shuffled: ListItem[],
     ): boolean {
       for (let i = 0; i < original.length; i++) {
-        if (original[i].name === shuffled[i].name) {
+        if (original[i].email === shuffled[i].email) {
           return false;
         }
       }
-
       return true;
     }
 
